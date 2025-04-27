@@ -10,21 +10,21 @@ Paigaldatud peab olema
 3. Java 21
 
 Käivitamine:
-1. Kontrolli, et sul ei jookse midagi portidel 8080 ja 8081
-    docker ps – näed kõiki kasutusel olevaid porte
-    lsof -i :8080 ja lsof -i :8081 – näed porte 8080 ja 8081
-2. Ehitame backendi
-    Mine terminalis kausta personal_manager 
-        cd person_manager
-3. Ehita backend
-    ./gradlew build
-    See tekitab faili personal_manager/build/libs/person_manager-0.0.1-SNAPSHOT.jar
-4. Paneme frontendi ja backendi tööle
-    Mine terminalis projekti kausta
-    Sisesta terminali docker-compose up –build
-5. Rakenduse ligipääs
-    Ava brauserist http://localhost:8081/ frontend.
-    Soovi korral ava ka backend brauserist http://localhost:8080/api/persons
-6. Kui soovid lõpetada
-    Peata konteinerid
-        docker-compose down
+# Projekti salvestamine
+1. Navigeeri terminalis kausta, kuhu projekti salvestada.
+2. Pane terminali `git clone [https://github.com/K2rtTrinity/TeliaProjekt](https://github.com/K2rtTrinity/TeliaProjektUus.git)`.
+# Kontrolli, et midagi ei jookseks portidel 8080 ja 8081
+1. Kõiki kasutusel olevaid porte näed käsuga `docker ps`.
+2. Eraldi porte 8080 ja 8081 näed käskudega `lsof -i :8080` ja `lsof -i :8081`.
+# Ehitame backend-i 
+1. Mine terminalis kausta person_manager: `cd person_manager`.
+2. Sisesta terminali käsk `./gradlew build` (see tekitab faili personal_manager/build/libs/person_manager-0.0.1-SNAPSHOT.jar).
+# Paneme frontendi ja backendi tööle
+1. Navigeeri terminalis projekti kausta (kus on omakorda kaustad person_manager, person_manager_frontend ning üks fail docker-compose.yml).
+2. Sisesta terminali `docker-compose up –build`.
+# Rakenduse ligipääs
+1. Ava brauserist http://localhost:8081/ frontend.
+2. Soovi korral ava ka backend brauserist http://localhost:8080/api/persons 
+# Kui soovid lõpetada
+1. Ctrl+C
+2. Peata konteinerid: `docker-compose down`.
